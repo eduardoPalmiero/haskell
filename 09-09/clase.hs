@@ -20,3 +20,25 @@ max x y
 
 
 --para el TP solo podemos usar $, (.), succ, pred, :, ord, chr , (,) , ==
+{- 
+Ejercicios para repaso general.
+Hacer la funcion suma usando la funcion resta.
+Hacer la funcion resta usando la funcion suma y el esPositivo
+
+Practicar usar el punto con una funcion que le falta un argumento para que tome el ultimo. -}
+
+{- Nos va a dar ua funcion para Hacer
+Una para leer y ver que hace.
+Una de traza para llegar al resultado
+
+Alguna funcion creativa que nunca vimos y algo de teoria. -}
+
+
+partirEn f (x:xs) 
+partirEn (>0) [(-1),(-6), 0 ,3 , (-1)] = [[(-2,(-6),0)],[3,(-1)]]
+
+parte la lista en dos cuando encuentra el primer positivo.
+
+intercalar _ []     = []
+intercalar _ (y:[]) = y:[]
+intercalar x (y:ys) = y:x:intercalar x ys
