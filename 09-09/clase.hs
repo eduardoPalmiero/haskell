@@ -60,7 +60,7 @@ Alguna funcion creativa que nunca vimos y algo de teoria. -}
 --The identity function takes one argument and returns that argument.
 
 partirEn f (x:xs) 
-partirEn (>0) [(-1),(-6), 0 ,3 , (-1)] = [[(-2,(-6),0)],[3,(-1)]]
+partirEn (>0) [(-1),(-6), 0 ,3 , (-1)] = ([(-2,(-6),0)],[3,(-1)])
 
 parte la lista en dos cuando encuentra el primer positivo.
 
