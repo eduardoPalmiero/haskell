@@ -28,9 +28,11 @@ k (-2) 5    = (+2) . k (-2) . pred . pred $ 5
 -- Implementar la función divEntero (quot) usando solo el operador anterior (>=)
 -- Implementar la función esPositivo usando nada.
 -- Calcular la cantidad de dígitos 9 que tiene un número.
--- Determinar si un número entero tiene dígitos consecutivos.
+-- Determinar si un número entero tiene dígitos iguales consecutivos.
 
 --id devuelve lo que le des, no hace nada.
+
+-- Examen martes 24
 
 id . f = f
 f . id = f
