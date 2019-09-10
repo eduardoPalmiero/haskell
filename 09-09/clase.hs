@@ -4,6 +4,31 @@ esPositivo x = esPositivo' (x,x)
 esPositivo' (_,0) = False
 esPositivo' (0,_) = True
 esPositivo' (x,y) = esPositivo' (pred x, succ y)
+-- $, ., succ, pred, id
+.>= 1 0
+.>= x y
+    | esPositivo x      = 
+
+
+
+1 >= 0
+2 >= 1
+3 >= 2
+
+1 >= 0
+0 >= -1
+-1 >= -2
+
+
+1 >= 1
+
+
+
+
+
+
+
+
 
 max x y
     | x >= y    = x
@@ -32,7 +57,7 @@ Una para leer y ver que hace.
 Una de traza para llegar al resultado
 
 Alguna funcion creativa que nunca vimos y algo de teoria. -}
-
+--The identity function takes one argument and returns that argument.
 
 partirEn f (x:xs) 
 partirEn (>0) [(-1),(-6), 0 ,3 , (-1)] = [[(-2,(-6),0)],[3,(-1)]]
