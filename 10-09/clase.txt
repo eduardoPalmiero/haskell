@@ -1,0 +1,15 @@
+EXPRESIONES REG
+La lista vacia no esta dentro de la sintaxis.
+
+Si queres los dos corchetes [][]
+
+[^]] esto es cualquier caracter menos el final
+
+[^] esto seria solo el sombrerito porque no existe la lista vacia
+
+Si tiene la barra invertida es el literal
+\[
+
+    (\)) +
+
+
