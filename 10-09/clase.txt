@@ -13,3 +13,4 @@ Si tiene la barra invertida es el literal
     (\)) +
 
 
+Hacer una funcion que use cola y asda que devuelva una lista con todas las combinaciones de una lista.
