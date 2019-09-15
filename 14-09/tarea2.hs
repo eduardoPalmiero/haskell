@@ -10,3 +10,22 @@ mult x y
     | y < 0 = -mult x (-y)
     | x < 0 = -mult (-x) y
     | y > 0 = x + mult x (y-1)
+---
+esMultiploDe :: Int -> Int -> Bool
+esMultiploDe _ 0    = error ("No se puede dividir por cero.")
+esMultiploDe dividendo divisor
+    | dividendo < 0             = esMultiploDe (-dividendo) divisor
+    | divisor   < 0             = esMultiploDe dividendo (-divisor)
+    | dividendo - divisor == 0  = True
+    | dividendo > divisor       = esMultiploDe (dividendo - divisor) divisor
+    | otherwise     = False
+---
+esPrimo :: Int -> Bool
+esPrimo 1 = False
+esPrimo 0 = False
+esPrimo x = elNumeroAnteriorEsMultiplo (x-1)
+    where
+      elNumeroAnteriorEsMultiplo y
+          | y == 1              = True
+          | x `esMultiploDe` y  = False
+          | otherwise           = elNumeroAnteriorEsMultiplo (y - 1)
