@@ -39,3 +39,5 @@ opuesto 3
     pred (-2)
     -3
 -}
+esPositivo :: Int -> Bool
+esPositivo x = True
