@@ -26,6 +26,6 @@ esPrimo 0 = False
 esPrimo x = elNumeroAnteriorEsMultiplo (x-1)
     where
       elNumeroAnteriorEsMultiplo y
-          | y == 1              = True
+          | y == 1              = True  --Cuando y sea 1 va a ser la ultima iteracion. Si llego a la ultima sin encontrar multiplos es primo.
           | x `esMultiploDe` y  = False
           | otherwise           = elNumeroAnteriorEsMultiplo (y - 1)
