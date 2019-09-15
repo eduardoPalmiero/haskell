@@ -43,3 +43,16 @@ esPositivo x = esPositivo' (x,x)
 esPositivo' (_,0) = False
 esPositivo' (0,_) = True
 esPositivo' (x,y) = esPositivo' (pred x, succ y)
+
+esNegativo :: Int -> Bool
+esNegativo 0 = False
+esNegativo x
+    | esPositivo x = False
+    | otherwise    = True
+
+a .>= b
+    | esNegativo a  = (succ a) .>= (succ b)
+    | esNegativo b  = True
+    | esPositivo a  = (pred a) .>= (pred b)
+    | esPositivo b  = False
+    | True          = True
