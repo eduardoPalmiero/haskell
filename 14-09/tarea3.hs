@@ -19,12 +19,11 @@ Opuesto usando nada
 
 Cuantos divisores tiene un número, usando rem
  -}
-
- opuesto :: Int -> Int
- opuesto 0 = 0
- opuesto x
-    | x > 0 = pred . opuesto . pred $ x
-    | x < 0 = succ . opuesto . succ $ x
+opuesto :: Int -> Int
+opuesto 0 = 0
+opuesto x
+   | esPositivo x   = pred . opuesto . pred $ x
+   | otherwise      = succ . opuesto . succ $ x
     {-
 Ejemplo de traza:
 opuesto 3
@@ -40,4 +39,7 @@ opuesto 3
     -3
 -}
 esPositivo :: Int -> Bool
-esPositivo x = True
+esPositivo x = esPositivo' (x,x)
+esPositivo' (_,0) = False
+esPositivo' (0,_) = True
+esPositivo' (x,y) = esPositivo' (pred x, succ y)
