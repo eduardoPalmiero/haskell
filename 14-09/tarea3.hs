@@ -56,3 +56,14 @@ a .>= b
     | esPositivo a  = (pred a) .>= (pred b)
     | esPositivo b  = False
     | True          = True
+
+veces :: Int -> (a -> a) -> (a -> a)
+veces 0 _ = id
+veces n f = f . veces (pred n) f
+
+divEntero :: Int -> Int -> Int
+divEntero _ 0 = error("No se puede dividir por cero.")
+divEntero 0 _ = 0
+divEntero x y
+    | x .>= y   = 1 + divEntero(y `veces` pred $ x) y
+    | otherwise = 0
