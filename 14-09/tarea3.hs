@@ -6,12 +6,11 @@ Implementar la función divEntero (quot) usando solo el operador anterior (>=)
 
 Implementar la función esPositivo usando nada.
 
-Calcular la cantidad de dígitos 9 que tiene un número.
-
+Opuesto usando nada
+-----------------
 Determinar si un número entero tiene dígitos iguales consecutivos.
 
-
-Opuesto usando nada
+Calcular la cantidad de dígitos 9 que tiene un número.
 
 (+) usando (-)
 
