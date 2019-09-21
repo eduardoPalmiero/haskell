@@ -1,0 +1,82 @@
+Teoría:
+Transparencia referencial e inmutabilidad
+Lazyness (cálculo perezoso)
+Trazabilidad de una función
+Sucesión de fibonacci: 0, 1, 1, 2, 3, 5, 8 ...
+
+Funciones nativas que deben dominar y saber reescribir:
+suma = (+)
+resta = (-)
+opuesto x = negate x = -x
+mult = (*)
+potencia = (**)
+divEntero = quot
+residuo = rem
+quotRem x y = (quot x y, rem x y)
+succ
+pred
+id
+const
+not
+primero = fst
+segundo = snd
+flip
+||
+&&
+xor
+
+Funciones inventadas que deben dominar y saber reescribir:
+esPrimo
+esMultiploDe
+esDivisorDe
+esPar
+esImpar
+esPositivo x = x > 0
+factorial
+veces
+aplicoNVeces
+
+Otras funciones que deben conocer:
+division = (/) (solo para Double)
+error
+trace
+show (solo para Int y Double)
+
+Operadores:
+$
+.
+==, /=
+>, <, >=, <=
+++ (solo para String)
+
+Constantes:
+True, False
+otherwise = True
+
+Estructura de lenguaje:
+guards
+patrones
+where
+if .. then .. else ..
+let .. in ..
+case .. of
+ .. -> ..
+ .. -> ..
+Notación infija (infix): x `f` y
+
+
+Especificación de tipo de función (::)
+
+Tipos:
+Bool
+Int
+Double
+String
+(a,b), (a,b,c) ..
+
+Algoritmos vistos (métodos):
+Recursividad
+Patrones
+Acumulación de resultados intermedios
+Funciones auxiliares
+Composición de funciones: .

@@ -65,5 +65,7 @@ divEntero :: Int -> Int -> Int
 divEntero _ 0 = error("No se puede dividir por cero.")
 divEntero 0 _ = 0
 divEntero x y
+    | 0 .>= y   = opuesto . divEntero x $ opuesto y
     | x .>= y   = 1 + divEntero(y `veces` pred $ x) y
+    | 0 .>= x   = opuesto . divEntero (opuesto x) $ y
     | otherwise = 0
