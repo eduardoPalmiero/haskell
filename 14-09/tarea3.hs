@@ -88,8 +88,9 @@ esNueve 9 = True
 esNueve _ = False
 
 cuantosNueveTiene :: Int -> Int
+cuantosNueveTiene 0     = 0
 cuantosNueveTiene x
     | esNegativo x      = cuantosNueveTiene (opuesto x)
     | elRestoEsNueve x  = succ . cuantosNueveTiene . divEntero x $ 10
-    | otherwise         = 0
-    where elRestoEsNueve y = esNueve $ residuo y 10
+    | otherwise         = cuantosNueveTiene . divEntero x $ 10
+        where elRestoEsNueve y = esNueve $ residuo y 10
