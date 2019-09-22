@@ -68,3 +68,28 @@ divEntero x y
     | x .>= y   = 1 + divEntero(y `veces` pred $ x) y
     | 0 .>= x   = opuesto . divEntero (opuesto x) $ y
     | otherwise = 0
+
+
+residuo :: Int -> Int -> Int
+residuo _ 0     = error ("No se puede dividir por cero.")
+residuo x y
+    | y < 0     = residuo x (-y)
+    | x < 0     = -residuo (-x) y
+    | x >= y    = residuo (x-y) y
+    | x < y     = x
+    | otherwise = 0
+
+{-
+Hay que usar la funcion residuo x 10, si el resto es 9 sumo 1 nueve
+e ir haciendo divEntero x 10 para sacar siempre el ultimo numero hasta que sea cero o algo asi
+-}
+esNueve :: Int -> Bool
+esNueve 9 = True
+esNueve _ = False
+
+cuantosNueveTiene :: Int -> Int
+cuantosNueveTiene x
+    | esNegativo x      = cuantosNueveTiene (opuesto x)
+    | elRestoEsNueve x  = succ . cuantosNueveTiene . divEntero x $ 10
+    | otherwise         = 0
+    where elRestoEsNueve y = esNueve $ residuo y 10
