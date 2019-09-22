@@ -23,20 +23,22 @@ opuesto 0 = 0
 opuesto x
    | esPositivo x   = pred . opuesto . pred $ x
    | otherwise      = succ . opuesto . succ $ x
+   
     {-
-Ejemplo de traza:
-opuesto 3
-    pred . opuesto . pred $ (3)
-    pred . opuesto . 2
-    pred . pred . opuesto . pred $ 2
-    pred . pred . opuesto $ 1
-    pred . pred . pred . opuesto . pred $ 1
-    pred . pred . pred . opuesto $ 0
-    pred . pred . pred $ 0
-    pred . pred $ (-1)
-    pred (-2)
-    -3
--}
+    Ejemplo de traza:
+    opuesto 3
+        pred . opuesto . pred $ (3)
+        pred . opuesto . 2
+        pred . pred . opuesto . pred $ 2
+        pred . pred . opuesto $ 1
+        pred . pred . pred . opuesto . pred $ 1
+        pred . pred . pred . opuesto $ 0
+        pred . pred . pred $ 0
+        pred . pred $ (-1)
+        pred (-2)
+        -3
+    -}
+
 esPositivo :: Int -> Bool
 esPositivo x = esPositivo' (x,x)
 esPositivo' (_,0) = False
@@ -55,6 +57,24 @@ a .>= b
     | esPositivo a  = (pred a) .>= (pred b)
     | esPositivo b  = False
     | True          = True
+
+no :: Bool -> Bool
+no True = False
+no False = True
+
+esIgualA :: Int -> Int -> Bool
+esIgualA 0 0 = True
+esIgualA 0 _ = False
+esIgualA _ 0 = False
+esIgualA a b
+    | esNegativo a  = esIgualA (succ a) (succ b)
+    | esNegativo b  = esIgualA (succ a) (succ b)
+    | otherwise     = esIgualA (pred a) (pred b)
+
+andAnd :: Bool -> Bool -> Bool
+andAnd _ False = False
+andAnd False _ = False
+andAnd True True = True
 
 veces :: Int -> (a -> a) -> (a -> a)
 veces 0 _ = id
@@ -94,3 +114,6 @@ cuantosNueveTiene x
     | elRestoEsNueve x  = succ . cuantosNueveTiene . divEntero x $ 10
     | otherwise         = cuantosNueveTiene . divEntero x $ 10
         where elRestoEsNueve y = esNueve $ residuo y 10
+
+-- tieneDigitosIgualesConsecutivos x
+--     | x
