@@ -18,26 +18,12 @@ Calcular la cantidad de dígitos 9 que tiene un número.
 
 Cuantos divisores tiene un número, usando rem
  -}
+
 opuesto :: Int -> Int
 opuesto 0 = 0
 opuesto x
    | esPositivo x   = pred . opuesto . pred $ x
    | otherwise      = succ . opuesto . succ $ x
-   
-    {-
-    Ejemplo de traza:
-    opuesto 3
-        pred . opuesto . pred $ (3)
-        pred . opuesto . 2
-        pred . pred . opuesto . pred $ 2
-        pred . pred . opuesto $ 1
-        pred . pred . pred . opuesto . pred $ 1
-        pred . pred . pred . opuesto $ 0
-        pred . pred . pred $ 0
-        pred . pred $ (-1)
-        pred (-2)
-        -3
-    -}
 
 esPositivo :: Int -> Bool
 esPositivo x = esPositivo' (x,x)
@@ -76,6 +62,11 @@ andAnd _ False = False
 andAnd False _ = False
 andAnd True True = True
 
+orOr :: Bool -> Bool -> Bool
+orOr _ True = True
+orOr True _ = True
+orOr _ _ = False
+
 veces :: Int -> (a -> a) -> (a -> a)
 veces 0 _ = id
 veces n f = f . veces (pred n) f
@@ -99,10 +90,6 @@ residuo x y
     | x < y     = x
     | otherwise = 0
 
-{-
-Hay que usar la funcion residuo x 10, si el resto es 9 sumo 1 nueve
-e ir haciendo divEntero x 10 para sacar siempre el ultimo numero hasta que sea cero o algo asi
--}
 esNueve :: Int -> Bool
 esNueve 9 = True
 esNueve _ = False
@@ -115,5 +102,13 @@ cuantosNueveTiene x
     | otherwise         = cuantosNueveTiene . divEntero x $ 10
         where elRestoEsNueve y = esNueve $ residuo y 10
 
--- tieneDigitosIgualesConsecutivos x
---     | x
+tieneDigitosIgualesConsecutivos x
+    | esNegativo x                  = tieneDigitosIgualesConsecutivos (opuesto x)
+    | x < 10                        = False
+    | compararUltimosDosDigitos x   = True
+    | otherwise                     = tieneDigitosIgualesConsecutivos(divEntero x 10) 
+        where 
+            compararUltimosDosDigitos y 
+                | y .>= 10          = (residuo y 10) `esIgualA` (residuo (divEntero y 10) 10)
+
+-- orOr ((residuo 1134 10) esIgualA (residuo 113 10)) . orOr ((residuo 113 10) esIgualA (residuo 11 10))  ((residuo 11 10) esIgualA (residuo 11 10))
