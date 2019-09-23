@@ -109,4 +109,16 @@ tieneDigitosIgualesConsecutivos x
     | otherwise                     = tieneDigitosIgualesConsecutivos (divEntero x 10)
         where compararUltimosDosDigitos y = (residuo y 10) `esIgualA` (residuo (divEntero y 10) 10)
 
--- orOr ((residuo 1134 10) esIgualA (residuo 113 10)) . orOr ((residuo 113 10) esIgualA (residuo 11 10))  ((residuo 11 10) esIgualA (residuo 11 10))
+-- orOr ((residuo 1134 10) esIgualA (r:esiduo 113 10)) . orOr ((residuo 113 10) esIgualA (residuo 11 10))  ((residuo 11 10) esIgualA (residuo 11 10))
+
+suma x y = - (- x - y)
+
+menos x y = opuesto $ opuesto x + y
+
+cuantosDiv 0 = error("Todos los numeros se pueden dividir por cero.")
+cuantosDiv x = cuantosDiv' x
+    where 
+        cuantosDiv' 0                       = 0
+        cuantosDiv' y 
+            | (residuo x y) `esIgualA` 0    = succ $ cuantosDiv' . pred $ y
+            | otherwise                     = cuantosDiv' . pred $ y
