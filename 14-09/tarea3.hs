@@ -116,7 +116,8 @@ suma x y = - (- x - y)
 menos x y = opuesto $ opuesto x + y
 
 cuantosDiv 0 = error("Todos los numeros se pueden dividir por cero.")
-cuantosDiv x = cuantosDiv' x
+cuantosDiv x | esNegativo x = cuantosDiv (opuesto x)
+cuantosDiv x                = cuantosDiv' x
     where 
         cuantosDiv' 0                       = 0
         cuantosDiv' y 
