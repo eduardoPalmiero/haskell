@@ -102,13 +102,11 @@ cuantosNueveTiene x
     | otherwise         = cuantosNueveTiene . divEntero x $ 10
         where elRestoEsNueve y = esNueve $ residuo y 10
 
+tieneDigitosIgualesConsecutivos 0   = False
 tieneDigitosIgualesConsecutivos x
     | esNegativo x                  = tieneDigitosIgualesConsecutivos (opuesto x)
-    | x < 10                        = False
     | compararUltimosDosDigitos x   = True
-    | otherwise                     = tieneDigitosIgualesConsecutivos(divEntero x 10) 
-        where 
-            compararUltimosDosDigitos y 
-                | y .>= 10          = (residuo y 10) `esIgualA` (residuo (divEntero y 10) 10)
+    | otherwise                     = tieneDigitosIgualesConsecutivos (divEntero x 10)
+        where compararUltimosDosDigitos y = (residuo y 10) `esIgualA` (residuo (divEntero y 10) 10)
 
 -- orOr ((residuo 1134 10) esIgualA (residuo 113 10)) . orOr ((residuo 113 10) esIgualA (residuo 11 10))  ((residuo 11 10) esIgualA (residuo 11 10))
