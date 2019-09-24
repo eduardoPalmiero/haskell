@@ -101,7 +101,8 @@ cuantosNueveTiene x
     | elRestoEsNueve x  = succ . cuantosNueveTiene . divEntero x $ 10
     | otherwise         = cuantosNueveTiene . divEntero x $ 10
         where elRestoEsNueve y = esNueve $ residuo y 10
-
+        
+tieneDigitosIgualesConsecutivos :: Int -> Bool
 tieneDigitosIgualesConsecutivos 0   = False
 tieneDigitosIgualesConsecutivos x
     | esNegativo x                  = tieneDigitosIgualesConsecutivos (opuesto x)
@@ -115,6 +116,7 @@ suma x y = - (- x - y)
 
 menos x y = opuesto $ opuesto x + y
 
+cuantosDiv :: Int -> Int
 cuantosDiv 0 = error("Todos los numeros se pueden dividir por cero.")
 cuantosDiv x | esNegativo x = cuantosDiv (opuesto x)
 cuantosDiv x                = cuantosDiv' x
