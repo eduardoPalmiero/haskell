@@ -20,3 +20,8 @@ fibonacci x = fibonacci' (0,1)
     where fibonacci' (y,z)
             | y < x     = trace (show y) $ fibonacci' (y+z,y)
             | otherwise = y
+
+xor :: Bool -> Bool -> Bool
+xor True True   = False
+xor False False = False
+xor _ _         = True
