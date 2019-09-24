@@ -17,7 +17,8 @@ Calcular la cantidad de dígitos 9 que tiene un número.
 (-) usando (+) y opuesto
 
 Cuantos divisores tiene un número, usando rem
- -}
+
+-}
 
 opuesto :: Int -> Int
 opuesto 0 = 0

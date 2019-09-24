@@ -10,17 +10,13 @@ maxDigito x | x < 0 = maxDigito (-x)
 maxDigito x         = max (rem x 10) $ maxDigito (quot x 10)
 
 -- 1934
-
 -- max 4 $ max 3 $ max 9 $ max 1 $ 0
 {-
 Serie de fibonacci hasta un numero x
 -}
 
--- fibonacci x = fibonacci'
--- x = 10
--- y = 20
--- trace x  y
-
--- fibonacci x = 
-
-
+fibonacci :: Int -> Int 
+fibonacci x = fibonacci' (0,1)
+    where fibonacci' (y,z)
+            | y < x     = trace (show y) $ fibonacci' (y+z,y)
+            | otherwise = y
