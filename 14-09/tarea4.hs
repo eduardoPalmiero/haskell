@@ -25,3 +25,7 @@ xor :: Bool -> Bool -> Bool
 xor True True   = False
 xor False False = False
 xor _ _         = True
+
+-- xor :: Bool -> Bool -> Bool
+-- xor x y | x == y    = False
+-- xor _ _             = True
