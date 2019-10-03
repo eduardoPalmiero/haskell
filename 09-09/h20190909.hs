@@ -85,10 +85,12 @@ inicio (x:xs) = x : inicio xs
 ultimo (x:[]) = x
 ultimo (_:xs) = ultimo xs
 
---partir n xs = (tomar n xs, sacar n xs)
+--splitAt
+--partirEn n xs = (tomar n xs, sacar n xs) El problema de este metodo es que recorres la lista dos veces
 
---partirEn f (x:xs) 
---partirEn (>0) [(-2),(-6),0,3,(-1)] = [[(-2),(-6),0],[3,(-1)]]
+--break
+--partirCuando f (x:xs) 
+--partirCuando (>0) [(-2),(-6),0,3,(-1)] = [[(-2),(-6),0],[3,(-1)]]
 
 interponer _ []      = []
 interponer _ (y:[])  = y:[]

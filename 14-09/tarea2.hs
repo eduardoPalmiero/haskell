@@ -13,11 +13,11 @@ mult x y
 ---
 esMultiploDe :: Int -> Int -> Bool
 esMultiploDe _ 0    = error ("No se puede dividir por cero.")
-esMultiploDe dividendo divisor
-    | dividendo < 0             = esMultiploDe (-dividendo) divisor
-    | divisor   < 0             = esMultiploDe dividendo (-divisor)
-    | dividendo - divisor == 0  = True
-    | dividendo > divisor       = esMultiploDe (dividendo - divisor) divisor
+esMultiploDe x y
+    | x < 0         = esMultiploDe (-x) y
+    | y < 0         = esMultiploDe x (-y)
+    | x - y == 0    = True
+    | x > y         = esMultiploDe (x - y) y
     | otherwise     = False
 ---
 esPrimo :: Int -> Bool

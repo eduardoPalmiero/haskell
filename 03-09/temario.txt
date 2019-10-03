@@ -1,7 +1,33 @@
 Teoría:
-Transparencia referencial e inmutabilidad
+Transparencia referencial e inmutabilidad. 
+
+Una funcion que reciba unos argumentos siempre va a devolver 
+lo mismo con esos argumentos, sin efectos colaterales. 
+Cualquier expresion del lenguaje se puede intercambiar por su valor.
+No existen las variables, nada puede cambiar su estado. Si yo digo x = 3 x siempre 
+va a valer 3.
+
+So in purely functional languages, a function has no
+side-effects. The only thing a function can do is calculate something
+and return it as a result. At first, this seems kind of limiting but it
+actually has some very nice consequences: if a function is called twice
+with the same parameters, it's guaranteed to return the same result.
+That's called referential transparency and not only does it allow the
+compiler to reason about the program's behavior, but it also allows you
+to easily deduce (and even prove) that a function is correct and then
+build more complex functions by gluing simple functions together.
+
+
 Lazyness (cálculo perezoso)
+
+Haskell is lazy . That means that unless specifically told
+otherwise, Haskell won't execute functions and calculate things until
+it's really forced to show you a result. That goes well with referential
+transparency and it allows you to think of programs as a series of transformations on data . 
+
+
 Trazabilidad de una función
+
 Sucesión de fibonacci: 0, 1, 1, 2, 3, 5, 8 ...
 
 Funciones nativas que deben dominar y saber reescribir:
@@ -17,6 +43,7 @@ succ
 pred
 id
 const
+https://www.quora.com/What-does-this-Haskell-code-mean-code-haskell-const-a-b-a-const-x-_-x-code
 not
 primero = fst
 segundo = snd

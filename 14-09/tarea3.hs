@@ -38,12 +38,20 @@ esNegativo x
     | esPositivo x = False
     | otherwise    = True
 
+(.>=) :: Int -> Int -> Int
 a .>= b
     | esNegativo a  = (succ a) .>= (succ b)
     | esNegativo b  = True
     | esPositivo a  = (pred a) .>= (pred b)
     | esPositivo b  = False
-    | True          = True
+    | otherwise     = True
+
+minor a b 
+    | esNegativo b = (succ a) `minor` (succ b)
+    | esNegativo a = True
+    | esPositivo b = (pred a) `minor` (pred b)
+    | esPositivo a = False
+    | otherwise    = False
 
 no :: Bool -> Bool
 no True = False
