@@ -24,3 +24,15 @@ mapeo f (x:xs)  = f x : mapeo f xs
 -- concatenar
 -- filtrar
 
+tomar 2 "bcdef" = "bc"
+sacar 2 "bcdef" = "def"
+partirEn 2 "bcdef" = ("bc","def")
+
+
+concat $ map inits $ tails "string donde buscar"
+
+TAREA:
+tomarMientras f []
+maximo
+minimo
+esPrefijoDe
