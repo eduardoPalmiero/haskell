@@ -67,3 +67,17 @@ parte la lista en dos cuando encuentra el primer positivo.
 intercalar _ []     = []
 intercalar _ (y:[]) = y:[]
 intercalar x (y:ys) = y:x:intercalar x ys
+
+{-
+Les dejo algunas funciones para escribir y practicar:
+Opuesto usando nada
+(+) usando (-)
+(-) usando (+) y opuesto
+Cuantos divisores tiene un número, usando rem
+
+Compilar y ejecutar TP
+ghc -o tp tp_template.hs
+echo pepe | tp.exe regex
+
+
+-}

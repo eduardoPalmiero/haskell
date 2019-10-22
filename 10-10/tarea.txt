@@ -1,0 +1,12 @@
+Aparte aprovecho para dejarles algunos ejercicios ya que falta mucho para la próxima clase:
+Escribir las siguientes funciones usando foldr, foldl, foldr1 o foldl1 (la que más les parezca que pueda servir):
+concatenar (++)
+concatenarL (concat)
+filtrar (filter)
+ultimo (last)
+cabeza (head)
+todos (all)
+algun (any)
+tomarMientras (takeWhile)
+nula (null)
+invertir (reverse)

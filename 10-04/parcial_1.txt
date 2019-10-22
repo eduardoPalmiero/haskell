@@ -1,0 +1,56 @@
+Computación Avanzada
+2do Cuat. 2019
+Primer parcial
+
+Fecha:
+Nombre:
+
+Tema 1
+
+--------------------------------------------------------------------------------
+
+1.
+Dadas las siguientes funciones:
+
+f a 0         = a
+f a b | b > 0 = pred . f a . pred $ b
+f a b         = succ . f a . succ $ b
+
+g a           = f a . f 0
+
+h a 0         = 0
+h a b | b > 0 = g a . h a . pred $ b
+h a b         = f 0 . h a . f 0 $ b
+
+a.
+Determinar:
+h 4 3       =
+h (-20) 7   =
+h 7 (-20)   =
+h (-1) (-5) =
+g 2 (-9)    =
+
+Cómo llamaría a la función g?
+
+b.
+Agregar el tipo de cada función.
+
+c.
+Realizar la traza del cálculo hasta llegar al resultado de:
+f 1 2 =
+
+--------------------------------------------------------------------------------
+
+2.
+Escribir la función esPrimo. En caso de negativos, tomar su valor absoluto.
+Nota: 0 y 1 no son primos.
+
+Funciones/operadores utilizables: quotRem, (>), (.), ($), succ, pred, (&&)
+
+--------------------------------------------------------------------------------
+
+3.
+Escribir una función que devuelva la suma de los dígitos de un número entero, recursivamente, hasta que dicha suma tenga un solo dígito. Para negativos, devolver un error.
+
+Funciones/operadores utilizables: Todo
+

@@ -1,0 +1,16 @@
+David, [11.09.19 10:29]
+Les sumo un ejercicio adicional para repasar: Realizar una función que calcule el máximo dígito de un número
+
+David, [11.09.19 10:30]
+y les dejo la solución a la consigna: "Implementar el operador .>= (>=) para enteros usando solo la función esPositivo"
+esPositivo x                = x > 0
+esNegativo 0                = False
+esNegativo x | esPositivo x = False
+esNegativo _                = True
+
+a .>= b
+    | esNegativo a                  = (succ a) .>= (succ b)
+    | esNegativo b                  = True
+    | esPositivo a                  = (pred a) .>= (pred b)
+    | esPositivo b                  = False
+    | True                          = True

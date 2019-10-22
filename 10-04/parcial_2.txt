@@ -1,0 +1,58 @@
+Computación Avanzada
+2do Cuat. 2019
+Primer parcial
+
+Fecha:
+Nombre:
+
+Tema 2
+
+--------------------------------------------------------------------------------
+
+1.
+Dadas las siguientes funciones:
+
+p 0             = False
+p 1             = False
+p a | a > 0     = flip q a $ pred a
+p a             = (p . r) a
+
+q 1 _           = True
+q a b | c > 0   = q (pred a) b
+ where (_,c) = b `quotRem` a
+q _ _           = False
+
+r 0             = 0
+r a             = succ . r . succ $ a
+
+a.
+Determinar:
+p 15     =
+p 7      = 
+p (-10)  =
+q 2 15   = 
+q 5 5    =
+
+Cómo llamaría a la función p?
+
+b.
+Agregar el tipo de cada función.
+
+c.
+Realizar la traza del cálculo hasta llegar al resultado de:
+r (-2)  =
+
+--------------------------------------------------------------------------------
+
+2.
+Escribir la función de multiplicación entre enteros (mult).
+
+Funciones/operadores utilizables: (>), (.), ($), id, succ, pred, (||), (==)
+
+--------------------------------------------------------------------------------
+
+3.
+Escribir una función que determine si la suma de los dígitos de un número entero termina con 7. Para negativos, tomar su valor absoluto.
+
+Funciones/operadores utilizables: Todo
+

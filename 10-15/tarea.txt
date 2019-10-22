@@ -1,0 +1,10 @@
+David, [17.10.19 13:36]
+buenas, les dejo una función para escribir para la próxima clase, llamemosla particiones que haga:
+particiones "abc" = [("","abc"),("a","bc"),("ab","c"),("abc","")]
+(les va a servir para el tp posiblemente)
+
+David, [17.10.19 13:39]
+el tipo es:
+particiones :: [a] -> ([a],[a])
+OJO en realidad es
+particiones :: [a] -> [([a],[a])]

@@ -1,0 +1,24 @@
+
+1 Ex1Ex2  ab -> ab
+4 Ex1|Ex2 a|b -> a ó b
+(Ex1|Ex2)Ex3  (a|b)c  es: ac ó bc
+5 ^  -> inicio de expresión  -- solo en pareja
+5 $  -> final de expresión   -- solo en pareja
+2 .  -> cualquier caracter
+3 \Caracter  -> Caracter literal : ej \. matchea el .
+
+3--
+Ex?   -> 0 ó 1 vez
+Ex+   -> al menos una vez
+Ex*   -> 0 ó más veces
+Ex{n} -> n veces
+Ex{n,m} -> entre n y m veces, inclusive
+Ex{n,}  -> al menos n veces
+Ex{,m}  -> Como mucho m veces
+
+2 [abcd] -> a ó b ó c ó d
+-- solo en pareja
+4 [^...] -> no lo que pertenezca a la lista
+3 [A-Z] 
+3 [A-Za-d0-9]
+

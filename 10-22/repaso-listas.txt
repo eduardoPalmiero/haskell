@@ -1,0 +1,21 @@
+Hay un tipo de dato que es Listas que puede tener dentro suyo mismo listas.
+
+Usamos listas porque muchas librerias la utilizan y es algo fundamental en Haskell.
+
+(:) :: a -> [a] -> [a]
+
+La lista es una lista vacia y un monton de elementos adelante. Son varios operadores a una lista vacia
+
+[3,4,5] = 3:4:5:[]
+
+Donde la primer variante es una forma `elegante` de escribir la lista.
+
+Solo con las Listas se puede declarar el tipo de dato  usando [], generalmente se declara el tipo de dato de forma Tradicional (ej. Int a)
+Los operadores no los podes poner del lado de la izquierda pero el dos puntos si, porque no es un operador en ese caso,
+funciona como una definicion para matchear el patron.
+
+
+
+
+
+

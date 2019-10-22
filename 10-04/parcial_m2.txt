@@ -1,0 +1,75 @@
+Computación Avanzada
+2do Cuat. 2019
+Primer parcial
+
+Fecha:
+Nombre:
+
+Tema 2
+
+--------------------------------------------------------------------------------
+
+1.
+Dadas las siguientes funciones:
+
+p 0             = False
+p 1             = False
+p a | a > 0     = flip q a $ pred a = q (pred a) a = q (a-1) a
+p a             = (p . r) a = p (r a) = p (-a) 
+
+p 2 = q 1 2 = True
+p 3 = q 2 3 = q 1 3 = True
+p 4 = q 3 4 = q 2 4 = False
+
+q 1 _           = True
+q a b | c > 0   = q (pred a) b = q (a-1) b
+ where (_,c) = b `quotRem` a
+q _ _           = False
+
+r 0             = 0
+r a             = succ . r . succ $ a
+r a = 1 + r (a + 1)
+r (-1) = 1 + r 0 = 1
+r (-2) = 1 + r (-2 + 1) = 1 + r (-1) = 1 + 1 = 2
+r = abs
+a.
+Determinar:
+p 15     =
+p 7      = 
+p (-10)  =
+q 2 15   = 
+q 5 5    =
+
+Cómo llamaría a la función p?
+
+b.
+Agregar el tipo de cada función.
+
+c.
+Realizar la traza del cálculo hasta llegar al resultado de:
+r (-2)  =
+
+--------------------------------------------------------------------------------
+
+2.
+Escribir la función de multiplicación entre enteros (mult).
+
+Funciones/operadores utilizables: (>), (.), ($), id, succ, pred, (||), (==)
+
+--------------------------------------------------------------------------------
+
+3.
+Escribir una función que determine si la suma de los dígitos de un número entero termina con 7. Para negativos, tomar su valor absoluto.
+
+Funciones/operadores utilizables: Todo
+
+sumaDig x
+    | x < 10    = x
+    | otherwise = sumaDig $ x `rem` 10 + sumaDig (x `quot` 10)
+
+sumaDig' x = sumaDig x `rem` 10 == 7
+
+sumaDig'' x
+    | aux < 10  = aux
+    | otherwise = sumaDig'' aux
+    where aux = sumaDig x

@@ -1,0 +1,7 @@
+Tema entregas parciales del TP:
+- Debe compilar.
+- Debe estar documentado que hace hasta el momento y los bugs (conocidos) que tiene.
+- Usen el template y dejen en producción hasta donde hayan hecho, dejando comentado (entre {- -}) todo lo que no se use.
+- Cada función no comentada debe tener un nombre feliz y algún mini comentario sobre lo que hace y/o algún ejemplo.
+(Ej.: Devuelve si un string se encuentra dentro de otro. contieneR "bl" "habla" = True)
+- Si pueden vayan llevando en la parte superior un changelog, con lo que van implementando (ej. 13/10/2019: Agrego '.' como caracter comodín.)
