@@ -30,3 +30,25 @@ lo que va despues del pipe es un patron tambien, no es una variable.
 [x | (x:xs) <- [[1,2,3],[]]]
 devuelve solo aquelals que tengan el patron. esto lo puede hacer porque asi funcionan los monads.
 
+tails inits las podemos usar de list.
+
+a{2} hay que leerlo, pasarlo el char a numero
+hay que leerlo de derecha a izquierda, hay que invertir la cadena. lo podes hacer con un foldr
+
+read x = n 
+read '2' = 2
+
+(hola) es lo mismo que (h){1}(o)(l)(a) = (h){1,1}(o)(l)(a)
+
+
+el corchete es un multiplicador igual que *+?{
+{n}
+{,m}
+{n,}
+{n,m}
+* es puede estar o no n veces
+? es puede estar o no
++ 
+ho*la es como ponerle un comodin a o entonces matchea con hhla por ejemplo
+
+no verlo como buscar caracter por caracter sino buscar expresiones. Si no encuentro multiplicador generarlo.
